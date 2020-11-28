@@ -12,5 +12,7 @@
 */.lein-failures
 */.nrepl-port
 */.cpcache/
+*/.clj-kondo/
+*/.lsp
 
 *.exercism/

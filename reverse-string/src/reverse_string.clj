@@ -1,12 +1,8 @@
-(ns reverse-string
-  (:require
-   [clojure.string :as clojure.string]))
+(ns reverse-string)
 
-(defn reverse
-  [a acc]
-  (if (empty? a)
-    acc
-    (reverse (rest a) (conj acc (first a)))))
-
-(defn reverse-string [s]
-  (clojure.string/join (reverse s '())))
+(defn reverse-string
+  ([s] (apply str (reverse-string s '())))
+  ([a acc]
+   (if (empty? a)
+     acc
+     (recur (rest a) (conj acc (first a))))))
